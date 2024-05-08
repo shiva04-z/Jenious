@@ -1,6 +1,9 @@
+import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:jenious/demo.dart';
 import 'package:jenious/form_Validator.dart';
 import 'package:jenious/list_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 void main() {
   runApp(const Myapp());
 }
@@ -11,7 +14,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Jenious Application",
-      home: WelcomePage(),
+      home: Demo(),
     );
   }
 }
@@ -28,19 +31,20 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [Icon(FeatherIcons.airplay)]),
         backgroundColor:Colors.pink[900],
         body: Center(
           child: SizedBox(
             height: 500,
             child: Column(
                 children:[
-                  const Text(
-                      "WELCOME\nTO\nFLUTTER Development",
-                      style:TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 45,
-                        color:Colors.white,),
-                      textAlign:TextAlign.center),
+                   Text(
+                    'Welcome to Flutter',
+                     style: GoogleFonts.alegreya(
+                       textStyle: TextStyle(color: Colors.blue, letterSpacing: .5,fontSize: 40),
+                     ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(top:150.0),
                     child: IconButton(
